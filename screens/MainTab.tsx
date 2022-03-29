@@ -10,9 +10,34 @@ const Tab = createBottomTabNavigator();
 function MainTab() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Feeds" component={FeedsScreen} />
-      <Tab.Screen name="Calendar" component={CalendarScreen} />
-      <Tab.Screen name="Search" component={SearchScreen} />
+      <Tab.Screen
+        name="Feeds"
+        component={FeedsScreen}
+        options={{
+          tabBarActiveTintColor: '#009688',
+          tabBarIcon: ({color, size}) => (
+            <Icon name="view-stream" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Calendar"
+        component={CalendarScreen}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <Icon name="event" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Search"
+        component={SearchScreen}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <Icon name="search" size={size} color={color} />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 }
